@@ -9,5 +9,12 @@
 <body>
   <h1>ブログサイト</h1>
   <p>ここはトップページです。</p>
+  {% for b in blog %}
+    <div>
+      <h3>{{ b.title }}</h3>
+      <div>{{ b.text | truncatechars:100 }}</div>
+    </div>
+    <hr />
+    {% endfor %}
 </body>
 </html>
