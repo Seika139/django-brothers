@@ -7,4 +7,4 @@ def index(request):
 
 def detail(request, blog_id):
     blog = Blog.objects.get(id=blog_id)
-    return render(request, 'blogs/detail.html', {'blog': blog})
+    return render(request, 'blog/detail.html', {'blog': blog})
