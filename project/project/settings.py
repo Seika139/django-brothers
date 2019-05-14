@@ -19,8 +19,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'k+==4$ok)!$b82hg*08i_0^0*k1mpa8pz!#ok4af0c)xsc1q2$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -128,5 +126,6 @@ except ImportError:
 
 # Debug=Falseの時だけ実行する設定
 if not DEBUG:
+    SECRET_KEY = os.environ['SECRET_KEY']
     import django_heroku
     django_heroku.settings(locals())
